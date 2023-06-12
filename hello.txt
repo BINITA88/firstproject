@@ -1,2 +1,117 @@
-this is text file..h dfhgnvjb
+Database of dashboard
 
+-- Table structure for table `supplier`
+DROP TABLE IF EXISTS `supplier`;
+CREATE TABLE `supplier` (
+  `s_id` int NOT NULL AUTO_INCREMENT,
+  `s_cname` varchar(255) NOT NULL,
+  `vat_pan` mediumtext,
+  `sup_add` varchar(255) DEFAULT NULL,
+  `city` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `scon_name` varchar(255) DEFAULT NULL,
+  `scon_des` varchar(255) DEFAULT NULL,
+  `sppan` mediumtext,
+  `scon_email` varchar(255) DEFAULT NULL,
+  `scon_mob` mediumtext,
+  PRIMARY KEY (`s_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+Table structure for table `cart`
+DROP TABLE IF EXISTS `cart`;
+
+CREATE TABLE `cart` (
+  `cartid` int NOT NULL AUTO_INCREMENT,
+  `INID` int NOT NULL,
+  `Product_Name` varchar(50) NOT NULL,
+  `Bar_code` varchar(50) NOT NULL,
+  `qty` varchar(20) NOT NULL,
+  `Unit_Price` varchar(20) NOT NULL,
+  `Total_Price` varchar(20) NOT NULL,
+  PRIMARY KEY (`cartid`)
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET
+
+
+Table structure for table `users`
+DROP TABLE IF EXISTS `users`;
+
+CREATE TABLE `users` (
+  `uname` varchar(255) NOT NULL,
+  `pass` varchar(255) NOT NULL,
+  `re_pass` varchar(255) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `sec_ans` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`uname`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+
+Table structure for table `sales`
+DROP TABLE IF EXISTS `sales`;
+
+CREATE TABLE `sales` (
+  `saleid` int NOT NULL AUTO_INCREMENT,
+  `INID` int NOT NULL,
+  `Cid` int NOT NULL,
+  `Customer_Name` varchar(50) NOT NULL,
+  `Total_Qty` varchar(10) NOT NULL,
+  `Total_Bill` varchar(10) NOT NULL,
+  `Status` varchar(10) NOT NULL,
+  `Balance` varchar(10) NOT NULL,
+  PRIMARY KEY (`saleid`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+
+
+Table structure for table `employee;
+
+DROP TABLE IF EXISTS `employee`;
+
+CREATE TABLE `employee` (
+  `eid` int NOT NULL AUTO_INCREMENT,
+  `e_name` varchar(255) DEFAULT NULL,
+  `e_ppan` mediumtext,
+  `e_padd` varchar(255) DEFAULT NULL,
+  `e_tadd` varchar(255) DEFAULT NULL,
+  `e_mob` mediumtext,
+  `e_email` varchar(255) DEFAULT NULL,
+  `e_econname` varchar(255) DEFAULT NULL,
+  `e_rel` varchar(50) DEFAULT NULL,
+  `e_emob` mediumtext,
+  `e_ealtmob` mediumtext,
+  PRIMARY KEY (`eid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Table structure for table `extra`
+
+DROP TABLE IF EXISTS `extra`;
+
+CREATE TABLE `extra` (
+  `exid` int NOT NULL AUTO_INCREMENT,
+  `val` varchar(10) NOT NULL,
+  PRIMARY KEY (`exid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+-- Table structure for table `product`
+
+DROP TABLE IF EXISTS `product`;
+
+CREATE TABLE `product` (
+  `pid` int NOT NULL AUTO_INCREMENT,
+  `Product_Name` varchar(50) NOT NULL,
+  `Bar_code` varchar(20) NOT NULL,
+  `Price` varchar(10) NOT NULL,
+  `Qty` varchar(10) NOT NULL,
+  `Sid` int NOT NULL,
+  PRIMARY KEY (`pid`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+
+CREATE TABLE `customer` (
+  `full_name` varchar(255) DEFAULT NULL,
+  `mob_no` mediumtext,
+  `bill_add` varchar(255) DEFAULT NULL,
+  `ship_add` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `nationality` varchar(255) DEFAULT NULL,
+  `c_id` int NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
